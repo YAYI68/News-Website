@@ -29,15 +29,29 @@ This project is a blog Application Programming Interface  backend developed with
    $ npm install
 
 ```
-- Provide the environment variables as specify in the `config.js` file
+- Provide the environment variables as specify in the `.env` file
 
 # Documentation
 
-The Project is well documented on Postman. The Publication link is [Survey-App Postman link](https://documenter.getpostman.com/view/15034996/2s8YzQX4Hj)
+The Project is well documented on Postman. The Publication link is [Blog API Postman link](https://documenter.getpostman.com/view/15034996/2s8YzQX4Hj)
 
 # Deployment
 
 The Project live deployment is [Survey-App deployment link](https://adefisayo-enterscale-test.vercel.app/). Use the documentation to know the routes for easy navigation.
+
+# Built-With
+
+The Api is built with Node.js, Json WebToken, MongoDB database to store information into the database. In addition, Json WEb Token to sign user information to accesss wallet functionality. The Application Environment Variable to implement funtionality while building the project are:
+
+- Environment Variable Names
+  - MONGODBURI : to connect to  an instance of mongodb url connection for database
+  - JWT_KEY : to authenticate users
+
+### Reasons for mongodb database?
+The main reason for this project is to create flexible schemma relation between the user, survey and survey response respectively. The different schemma relationship can offer scalability in a unlimited way. To offer good definition  and relationship of schemma 
+# Additions
+
+This service can be intergrated in a survey application and the application can be scaled to include other funtionality
 
 <!-- npx prisma format   to rearrange the relationship between the database schemas -->
 <!-- npx prisma studio to set up a temporary database schema with their data on the browser  -->
