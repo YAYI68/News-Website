@@ -14,16 +14,20 @@ This project is a blog Application Programming Interface  backend developed with
 
 - Visit the github respository github respository link
 - Clone the application programming interface to your Desktop from github.
+  
    > navigate to the code button on the repository.
+
    > copy the link and clone using the command **git clone repository url**
+   
    > or using github desktop.
+   
    > or download to your local desktop.
 - Open the code using any code editor.
 - On terminal run 
   
 ``` 
    $ npm install
-   
+
 ```
 
 <!-- npx prisma format   to rearrange the relationship between the database schemas -->
