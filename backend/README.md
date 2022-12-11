@@ -7,7 +7,7 @@ This project is a blog Application Programming Interface  backend developed with
 - Documentation
 - Deployment
 - Built-With
--- Reasons for choosing mongodb as database system
+  - Reasons for choosing mongodb as database system
 - Additions
 <!-- npx prisma format   to rearrange the relationship between the database schemas -->
 <!-- npx prisma studio to set up a temporary database schema with their data on the browser  -->
