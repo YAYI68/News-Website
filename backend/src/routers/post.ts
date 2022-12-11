@@ -20,7 +20,7 @@ const uploadImg = multer({storage}).single('image');
 
 route.get('/',getAllPost)
 route.post('/create',authMiddleware,postCreateValidator,uploadImg,createPost)
-route.post('/comment/:id',authMiddleware,commentInputValidator,createComment)
+route.post('/:id/comment',authMiddleware,commentInputValidator,createComment)
 route.get('/:id',getOnePost)
 route.put('/update/:id', authMiddleware,postUpdateValidator,uploadImg,updatePost)
 route.delete('/delete/:id',authMiddleware,deletePost)
