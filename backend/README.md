@@ -29,6 +29,15 @@ This project is a blog Application Programming Interface  backend developed with
    $ npm install
 
 ```
+- Provide the environment variables as specify in the `config.js` file
+
+# Documentation
+
+The Project is well documented on Postman. The Publication link is [Survey-App Postman link](https://documenter.getpostman.com/view/15034996/2s8YzQX4Hj)
+
+# Deployment
+
+The Project live deployment is [Survey-App deployment link](https://adefisayo-enterscale-test.vercel.app/). Use the documentation to know the routes for easy navigation.
 
 <!-- npx prisma format   to rearrange the relationship between the database schemas -->
 <!-- npx prisma studio to set up a temporary database schema with their data on the browser  -->
