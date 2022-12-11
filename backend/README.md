@@ -9,5 +9,18 @@ This project is a blog Application Programming Interface  backend developed with
 - Built-With
   - Reasons for choosing postgresql as database system and using Prisma ORM
 - Additions
+
+# Installation 
+
+- Visit the github respository github respository link
+- Clone the application programming interface to your Desktop from github.
+   > navigate to the code button on the repository.
+   > copy the link and clone using the command **git clone repository url**
+   > or using github desktop.
+   > or download to your local desktop.
+- Open the code using any code editor.
+- On Terminal run 
+   `` $ npm install ``
+
 <!-- npx prisma format   to rearrange the relationship between the database schemas -->
 <!-- npx prisma studio to set up a temporary database schema with their data on the browser  -->
