@@ -19,8 +19,8 @@ This project is a blog Application Programming Interface  backend developed with
    > or using github desktop.
    > or download to your local desktop.
 - Open the code using any code editor.
-- On Terminal run 
-   `` $ npm install ``
+- On terminal run 
+   ``` $ npm install ```
 
 <!-- npx prisma format   to rearrange the relationship between the database schemas -->
 <!-- npx prisma studio to set up a temporary database schema with their data on the browser  -->
