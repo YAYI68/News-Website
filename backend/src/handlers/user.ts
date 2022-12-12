@@ -1,3 +1,4 @@
+import { postCreateValidator } from './../validators/posts';
 
 import { nextTick } from "process";
 import prisma from "../db/prisma";
@@ -110,27 +111,57 @@ export const singleUser = async(req, res,next)=>{
     }
 }
 
+const userData = (data,image)=>{
+    if(!image){
+        return data
+    }
+    return {...data,imageUrl:image}
+}
+
+
 export const updateProfile = async(req, res,next)=>{
     try{
-        const { secure_url: image} = await cloudinary.uploader.upload(req.file.path)
-        const { name,email,username,description,occupation } = req.body;
+        const { name,email,description,occupation } = req.body;
+        const data = {
+                name:name,
+                email:email,
+                description:description,
+                occupation:occupation,  
+            }
+        let userUpdate; 
+        if(req.file){
+            const { secure_url: image} = await cloudinary.uploader.upload(req.file.path);
+            userUpdate = userData(data,image)
+        }
+        else{
+            userUpdate = userData(data,"")
+        }
+        console.log({userUpdate})
         const user = await prisma.user.update({
             where:{
-                id:req.user.id,
                 username:req.params.username
             },
             data:{
-                name:name,
-                email:email,
-                imageUrl:image,
-                description:description,
-                occupation:occupation,         
+                ...userUpdate,         
+            },
+            select:{
+                id: true,
+                username:true,
+                name:true,
+                email:true,
+                imageUrl: true,
+                description:true,
+                occupation: true,
             }
         })
+         if(req.user.id !== user.id){
+            res.status(401).json({message:"You cant update this Profile"})
+        return
+        }
         res.status(201).json({data:user})
     }
     catch(error){
-        res.json({error: error})
+        res.json({errorUpdate: error})
         next(error)
     }
 }

@@ -67,12 +67,34 @@ export const createPost = async(req, res) => {
     }
 }
 
+
+const postData = (data,image)=>{
+    if(!image){
+        return data
+    }
+    return {...data,imageUrl:image}
+}
+
 export const updatePost = async(req, res) => {
 
     try{
-        const { secure_url: image} = await cloudinary.uploader.upload(req.file.path)
+        
         const { title,content,status } = req.body
-        console.log({data:{ title,content,image,status }})
+        const data = {
+            title,
+            content,
+            status
+        }
+       
+        let postUpdate;
+        if(req.file){
+            const { secure_url: image} = await cloudinary.uploader.upload(req.file.path)
+            postUpdate= postData(data,image)
+        }
+        else{
+            postUpdate = postData(data,"")
+        }
+
         const blog = await prisma.post.update({
             where:{
                 author_postId:{
@@ -81,13 +103,9 @@ export const updatePost = async(req, res) => {
                 }
             },
             data:{
-                title,
-                content,
-                image: image,
-                status: status
+                ...postUpdate,
             }
         })
-
         res.status(200).json({data:blog});
     }
     catch(error){
