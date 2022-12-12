@@ -33,7 +33,7 @@ This project is a blog Application Programming Interface  backend developed with
 
 # Documentation
 
-The Project is well documented on Postman. The Publication link is [Blog API Postman link](https://documenter.getpostman.com/view/15034996/2s8YzQX4Hj)
+The Project is well documented on Postman. The Publication link is [Blog API Postman link](https://documenter.getpostman.com/view/14724403/2s8YzTVNnj)
 
 # Deployment
 
